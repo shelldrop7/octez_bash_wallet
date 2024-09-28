@@ -27,8 +27,8 @@
 		clear
 		echo -e -n "\n\n\t$title"
 		echo -e -n "\n\n\n\t\tInstall Wallet (octez-client for Ubuntu apt)\n\n\n"
-		bash -c "sudo add-apt-repository -y ppa:serokell/tezos && sudo apt-get update"
-		bash -c "sudo apt-get install -y tezos-client"
+		bash -c "sudo add-apt-repository -y ppa:serokell/tezos && sudo apt update"
+		bash -c "sudo apt install -y tezos-client"
 		bash -c "octez-client --endpoint https://mainnet.ecadinfra.com config update"
 		read dummy
 		clear
