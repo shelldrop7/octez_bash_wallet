@@ -1,6 +1,6 @@
-# octez_bash_wallet
+## octez_bash_wallet
 
-### Tezos is awesome thing!
+#### Tezos is awesome thing!
 
 I wanted to be able to manage my Tezos independently. Without a GUI directly in the shell.
 The octez-client serves as the basis and is functionally perfect.
@@ -13,8 +13,9 @@ You may need to use Ctrl-c from time to time, but it works.
 
 Have fun.
 
+</br></br>
 
-### Install
+#### Install
 
 Ubuntu (testet Ubuntu 24.04.01 LTS)
 
@@ -25,20 +26,25 @@ Ubuntu (testet Ubuntu 24.04.01 LTS)
 ##### Source octez-client in install
       sudo add-apt-repository -y ppa:serokell/tezos && sudo apt-get update
       sudo apt-get install -y tezos-client
+      
+</br></br>
 
-
-### RPC
+#### RPC
 The default Mainnet RPC can be found after installation under the following path.
 You can change or point to your own node.
 
       path       ~/.tezos-client/config
       default    https://mainnet.ecadinfra.com
       
+</br></br>
 
-### Import secret key
+#### Import secret key
 You can read the secret key from the Temple-Wallet or from Exodus-Desktop. I have tested these two Wallets.
 Encrypt them with [encrypt] and then [import] them or [create] a new account.
 
+</br></br>
+
+#### END
 
 
 
