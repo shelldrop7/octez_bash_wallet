@@ -20,6 +20,7 @@
 	title="Octez Bash Wallet"
 	feecap="--fee-cap 1.0"
 	burncap="--burn-cap 1.0"
+	export TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=yes
 
 
 # Functions
@@ -38,7 +39,8 @@
    encrypt_key() {
 		clear
 		echo -e -n "\n\n\t$title"
-		echo -e -n "\n\n\n\t\tEncrypt unencrypted secret key (format edsk...)\n\n\n"
+		echo -e -n "\n\n\n\t\tEncrypt unencrypted secret key (format edsk...)"
+		echo -e -n "\n\n\n"
 		bash -c "octez-client encrypt secret key"
 		read dummy
 		clear
@@ -53,6 +55,7 @@
 		read account
 		echo -e -n "\n\t\tSecret Key = "
 		read secret_key
+		echo -e -n "\n\n"
 		bash -c "octez-client import secret key $account $secret_key"
 		read dummy
 		navi
@@ -64,6 +67,7 @@
 		echo -e -n "\n\n\n\t\tCreate new account\n\n"
 		echo -e -n "\n\t\tAccount name = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client gen keys $account"
 		read dummy
 		navi
@@ -75,6 +79,7 @@
 		echo -e -n "\n\n\n\t\tShow address from <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client show address $account"
 		read dummy
 		clear
@@ -87,6 +92,7 @@
 		echo -e -n "\n\n\n\t\tBalance from <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client get balance for $account"
 		read dummy
 		clear
@@ -103,6 +109,7 @@
 		read account
 		echo -e -n "\n\t\tTo Recipient = "
 		read recipient
+		echo -e -n "\n\n"
 		bash -c "octez-client transfer $amount from $account to $recipient $feecap $burncap"
 		read dummy
 		clear
@@ -115,6 +122,7 @@
 		echo -e -n "\n\n\n\t\tShow delegate address from <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client get delegate for $account"
 		read dummy
 		clear
@@ -129,6 +137,7 @@
 		read account
 		echo -e -n "\n\t\tAddress = "
 		read address
+		echo -e -n "\n\n"
 		bash -c "octez-client set delegate for $account to $address"
 		read dummy
 		clear
@@ -141,6 +150,7 @@
 		echo -e -n "\n\n\n\t\tStop delegate for <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client withdraw delegate from $account"
 		read dummy
 		clear
@@ -153,6 +163,7 @@
 		echo -e -n "\n\n\n\t\tShow stake balance for <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client get staked balance for $account"
 		read dummy
 		clear
@@ -167,6 +178,7 @@
 		read amount
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client stake $amount for $account"
 		read dummy
 		clear
@@ -181,6 +193,7 @@
 		read amount
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client unstake $amount for $account"
 		read dummy
 		clear
@@ -193,6 +206,7 @@
 		echo -e -n "\n\n\n\t\tFinalize unstake all for <account>\n\n"
 		echo -e -n "\n\t\tAccount = "
 		read account
+		echo -e -n "\n\n"
 		bash -c "octez-client finalize unstake for $account"
 		read dummy
 		clear
