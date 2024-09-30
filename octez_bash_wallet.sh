@@ -30,7 +30,7 @@
 		echo -e -n "\n\n\n\t\tInstall Wallet (octez-client for Ubuntu apt)\n\n\n"
 		bash -c "sudo add-apt-repository -y ppa:serokell/tezos && sudo apt update"
 		bash -c "sudo apt install -y tezos-client"
-		bash -c "octez-client --endpoint https://mainnet.ecadinfra.com config update"
+		bash -c "octez-client --endpoint https://mainnet.ecadinfra.com config update" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -41,7 +41,7 @@
 		echo -e -n "\n\n\t$title"
 		echo -e -n "\n\n\n\t\tEncrypt unencrypted secret key (format edsk...)"
 		echo -e -n "\n\n\n"
-		bash -c "octez-client encrypt secret key"
+		bash -c "octez-client encrypt secret key" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -56,7 +56,7 @@
 		echo -e -n "\n\t\tSecret Key = "
 		read secret_key
 		echo -e -n "\n\n"
-		bash -c "octez-client import secret key $account $secret_key"
+		bash -c "octez-client import secret key $account $secret_key" 2> >(head -4)
 		read dummy
 		navi
    }
@@ -68,7 +68,7 @@
 		echo -e -n "\n\t\tAccount name = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client gen keys $account"
+		bash -c "octez-client gen keys $account" 2> >(head -4)
 		read dummy
 		navi
    }
@@ -80,7 +80,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client show address $account"
+		bash -c "octez-client show address $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -93,7 +93,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client get balance for $account"
+		bash -c "octez-client get balance for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -110,7 +110,7 @@
 		echo -e -n "\n\t\tTo Recipient = "
 		read recipient
 		echo -e -n "\n\n"
-		bash -c "octez-client transfer $amount from $account to $recipient $feecap $burncap"
+		bash -c "octez-client transfer $amount from $account to $recipient $feecap $burncap" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -123,7 +123,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client get delegate for $account"
+		bash -c "octez-client get delegate for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -138,7 +138,7 @@
 		echo -e -n "\n\t\tAddress = "
 		read address
 		echo -e -n "\n\n"
-		bash -c "octez-client set delegate for $account to $address"
+		bash -c "octez-client set delegate for $account to $address" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -151,7 +151,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client withdraw delegate from $account"
+		bash -c "octez-client withdraw delegate from $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -164,7 +164,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client get staked balance for $account"
+		bash -c "octez-client get staked balance for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -179,7 +179,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client stake $amount for $account"
+		bash -c "octez-client stake $amount for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -194,7 +194,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client unstake $amount for $account"
+		bash -c "octez-client unstake $amount for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
@@ -207,7 +207,7 @@
 		echo -e -n "\n\t\tAccount = "
 		read account
 		echo -e -n "\n\n"
-		bash -c "octez-client finalize unstake for $account"
+		bash -c "octez-client finalize unstake for $account" 2> >(head -4)
 		read dummy
 		clear
 		navi
