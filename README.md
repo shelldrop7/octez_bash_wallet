@@ -5,11 +5,8 @@
 I wanted to be able to manage my Tezos independently. Without a GUI directly in the shell.
 The octez-client serves as the basis and is functionally perfect.
 This project uses the octez-client as an intuitive wallet from a Ubuntu bash.
-I'm not a good programmer, can't catch some outputs and often don't write atomically.
-However, anyone can read and understand the code and adapt it to their needs.
-The octez client is the source of all Tezos software.
-It is secure and I couldn't do much wrong.
-You may need to use Ctrl-c from time to time, but it works.
+Anyone can read and understand the code and adapt it to their needs.
+You may need to use Ctrl-c from time to time, but it works fine.
 
 Have fun.
 
